@@ -175,6 +175,8 @@ pub enum Error {
     Infeasible,
     /// The objective function is unbounded.
     Unbounded,
+    /// unknown
+    Unknown,
 }
 
 impl std::fmt::Display for Error {
@@ -182,6 +184,7 @@ impl std::fmt::Display for Error {
         let msg = match self {
             Error::Infeasible => "problem is infeasible",
             Error::Unbounded => "problem is unbounded",
+            Error::Unknown => "bad",
         };
         msg.fmt(f)
     }
